@@ -90,6 +90,11 @@ class TaskTableViewCell: UITableViewCell {
     }
 
     override func gestureRecognizerShouldBegin(gestureRecognizer: UIGestureRecognizer) -> Bool {
+    
+    if !(gestureRecognizer.isKindOfClass(UIPanGestureRecognizer))
+        {
+            return true
+        }
         
         let recognizer = gestureRecognizer as UIPanGestureRecognizer
         let translation = recognizer.translationInView(self.superview!)
